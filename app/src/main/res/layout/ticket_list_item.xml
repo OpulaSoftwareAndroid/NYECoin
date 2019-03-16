@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:padding="@dimen/_4sdp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_4sdp"
+        android:layout_marginLeft="@dimen/_8sdp"
+        android:layout_marginRight="@dimen/_8sdp"
+        android:layout_marginTop="@dimen/_4sdp"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:paddingLeft="@dimen/_5sdp"
+                android:textColor="@color/black"
+                android:id="@+id/txt_ti_subject"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/m"
+                android:text="Test Ticket"
+                android:textSize="@dimen/_12sdp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:text="Department : Support Team"
+                android:paddingLeft="@dimen/_5sdp"
+                android:layout_gravity="start"
+                android:id="@+id/txt_ti_department"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/m"
+                android:textSize="@dimen/_10sdp" />
+
+            <TextView
+                android:paddingLeft="@dimen/_5sdp"
+                android:visibility="visible"
+                android:layout_gravity="start"
+                android:id="@+id/txt_ti_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/m"
+                android:text="Status : Pending"
+                android:textSize="@dimen/_10sdp" />
+
+            <TextView
+                android:textStyle="bold"
+                android:textColor="@color/colorRed"
+                android:paddingLeft="@dimen/_5sdp"
+                android:visibility="visible"
+                android:layout_gravity="start"
+                android:id="@+id/txt_closed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/m"
+                android:text="Closed"
+                android:textSize="@dimen/_10sdp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_marginRight="@dimen/_5sdp"
+                android:id="@+id/txt_ti_date"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:fontFamily="@font/m"
+                android:gravity="end"
+                android:text="2018-19-19 59:78:47" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+</LinearLayout>

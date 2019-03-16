@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorPrimary"
+    android:orientation="vertical"
+    android:theme="@style/ThemeOverlay.AppCompat.Dark">
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/img_dp"
+        android:layout_marginLeft="@dimen/_16sdp"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:src="@drawable/image_boy"
+        android:layout_width="@dimen/_52sdp"
+        android:layout_height="@dimen/_52sdp"/>
+    <TextView
+        android:layout_marginTop="@dimen/_8sdp"
+        android:layout_marginLeft="@dimen/_16sdp"
+        android:inputType="textCapWords"
+        android:id="@+id/txt_name"
+        android:fontFamily="@font/m"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_16sdp"
+        android:text="Jhon"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+    <TextView
+        android:layout_marginBottom="@dimen/_8sdp"
+        android:layout_marginLeft="@dimen/_16sdp"
+        android:singleLine="true"
+        android:id="@+id/txt_email"
+        android:fontFamily="@font/m"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_12sdp"
+        android:text="+9199922110000"
+        android:textStyle="bold"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+</LinearLayout>

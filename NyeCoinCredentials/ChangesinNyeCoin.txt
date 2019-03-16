@@ -1,0 +1,16 @@
+Application install solved
+
+
+1.  Icon on mobile is too big.square it has to be redish logo and small as per screen 
+2.  Login first and then finger print 
+3.  email id and password will be not avaliable (pin number or fingure print)
+4.  splash get started screen  not recquire 
+5.  4th logo is missing 
+6.  Send should not like a pop up require full screen 
+7.  Transaction password need removed if login pin active *discuss later by client
+8.  Transaction hash go to nye transaction website
+9.  Kyc need to be same as web (there will b approval process and pending need to be show )
+10. Full name is non editable 
+11. check for  After logout ask for finger print and login pin 
+Logout successfully   
+

@@ -1,0 +1,410 @@
+package com.omgame.booking;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v7.app.AlertDialog;
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+import com.omgame.MainActivity;
+import com.omgame.R;
+import com.omgame.constant.AppGlobal;
+import com.omgame.constant.SharedPreference;
+import com.omgame.constant.WsConstant;
+import com.omgame.model.CommanResponse;
+import com.omgame.model.CommanResponse1;
+import com.omgame.model.SquadModel;
+import com.omgame.webservice.RestClient;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.Reader;
+import java.io.StringWriter;
+import java.io.UnsupportedEncodingException;
+import java.io.Writer;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Objects;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
+public class Squad extends Fragment {
+
+    public static TextView txt_seat_number;
+    public static StringBuilder final_seatnumbr_for_tv, temp_final_seatnumbr_for_tv;
+    public static StringBuilder final_seatnumbr, temp_final_seatnumbr;
+    public static StringBuilder final_pubgid, temp_final_pubgid;
+    public static StringBuilder final_userid, temp_final_userid;
+    RecyclerView gridView;
+    List<String> temp = new ArrayList<String>();
+    List<String> listfromserver = new ArrayList<String>();
+    String game_id;
+    String selected;
+    SharedPreference sharedPreference;
+    Button btn_save;
+    SquadAdapter adapter;
+    private ArrayList<SquadModel.Info> contactList;
+
+    public Squad() {
+    }
+
+    public static void setseatnumber(List<String> list) {
+        final_seatnumbr_for_tv = new StringBuilder();
+        if (list.size() != 0) {
+            for (int i = 0; i < list.size(); i++) {
+                final_seatnumbr_for_tv.append(list.get(i));
+                final_seatnumbr_for_tv.append(",");
+            }
+            temp_final_seatnumbr_for_tv = final_seatnumbr_for_tv.deleteCharAt(final_seatnumbr_for_tv.length() - 1);
+
+            //////////////////////////////
+            //remove selected data/////
+            ///////////////////////////
+
+
+            txt_seat_number.setText("Selected Seat : " + temp_final_seatnumbr_for_tv);
+        } else {
+            txt_seat_number.setText("Selected Seat : 0");
+        }
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_squad, container, false);
+
+        sharedPreference = new SharedPreference();
+        game_id = Objects.requireNonNull(getActivity()).getIntent().getStringExtra("id");
+
+        initview(view);
+
+        GridLayoutManager manager = new GridLayoutManager(getContext(), 1, GridLayoutManager.VERTICAL, false);
+        gridView.setHasFixedSize(true);
+        gridView.setLayoutManager(manager);
+        contactList = new ArrayList<>();
+
+        try {
+            getselectedfield(game_id);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        btn_save.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (adapter.final_seatselected.size() != 0) {
+                    AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(getContext());
+                    LayoutInflater inflater = (getActivity()).getLayoutInflater();
+                    View dialogView = inflater.inflate(R.layout.dailog_receive, null);
+                    alertDialogBuilder.setView(dialogView);
+                    alertDialogBuilder.setCancelable(true);
+
+                    LinearLayout container_LV1 = (LinearLayout) dialogView.findViewById(R.id.container_LV1);
+                    Button btnSend = dialogView.findViewById(R.id.btnSend);
+                    final AlertDialog alertDialog = alertDialogBuilder.create();
+                    EditText et_userid = null;
+                    EditText et_pubgId = null;
+                    final ArrayList<String> final_useridList, final_pubgidList;
+                    LinearLayout main;
+                    final List<EditText> alluserId = new ArrayList<EditText>();
+                    final List<EditText> allpubgId = new ArrayList<EditText>();
+
+                    int l = adapter.final_seatselected.size();
+
+                    for (int i = 0; i < l; i++) {
+                        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
+                                ViewGroup.LayoutParams.WRAP_CONTENT);
+                        View child = getLayoutInflater().inflate(R.layout.seat_confirmed_list_item, null);
+
+                        LinearLayout r1 = new LinearLayout(getContext());
+                        r1.setLayoutParams(params);
+
+                        main = child.findViewById(R.id.main);
+                        et_userid = child.findViewById(R.id.et_userid);
+                        et_pubgId = child.findViewById(R.id.et_pubgId);
+
+                        et_pubgId.setId(i);
+                        et_userid.setId(i);
+
+                        int lk = i + 1;
+
+                        if (i == 0) {
+                            et_userid.setText(sharedPreference.getValue(getContext(), WsConstant.userId));
+                            et_pubgId.setText(sharedPreference.getValue(getContext(), WsConstant.pubgId));
+
+                            et_userid.setClickable(false);
+                            et_pubgId.setClickable(false);
+
+                            et_userid.setEnabled(false);
+                            et_pubgId.setEnabled(false);
+
+
+                        } else {
+                            et_userid.setHint("Userid " + lk);
+                            et_pubgId.setHint("Pubg Name " + lk);
+                        }
+
+                        allpubgId.add(et_pubgId);
+                        alluserId.add(et_userid);
+
+                        main.setLayoutParams(params);
+                        r1.addView(child);
+
+                        container_LV1.setLayoutParams(params);
+                        container_LV1.addView(r1);
+
+                    }
+                    final_useridList = new ArrayList<>();
+                    final_pubgidList = new ArrayList<>();
+
+                    btnSend.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+
+                            final_useridList.clear();
+                            final_pubgidList.clear();
+
+//                            for (int i = 0; i < allpubgId.size(); i++) {
+//                                if (allpubgId.get(i).getText().toString().isEmpty()) {
+//                                    allpubgId.get(i).setText("0");
+//                                }
+//                                final_pubgidList.add(allpubgId.get(i).getText().toString());
+//                            }
+                            for (int i = 0; i < allpubgId.size(); i++) {
+                                if (allpubgId.get(i).getText().toString().isEmpty()) {
+                                    int pos = i + 1;
+                                    Toast.makeText(getContext(), "Please enter Pubg Name " + pos, Toast.LENGTH_SHORT).show();
+                                    break;
+                                }
+                                else
+                                    if (!allpubgId.get(i).getText().toString().isEmpty())
+                                {
+                                    final_pubgidList.add(allpubgId.get(i).getText().toString());
+                                }
+                            }
+
+
+                            //api perform
+                            Log.d("seatselected", String.valueOf(adapter.final_seatselected));
+                            Log.d("seatselected", String.valueOf(final_useridList));
+                            Log.d("seatselected", String.valueOf(final_pubgidList));
+
+                            if (adapter.final_seatselected.size() != 0) {
+                                if (adapter.final_seatselected.size() == final_pubgidList.size()) {
+//                                    if (final_pubgidList.size() != 0)
+                                    {
+                                        if (final_pubgidList.size() != 0) {
+
+                                            final_seatnumbr = new StringBuilder();
+                                            temp_final_seatnumbr = new StringBuilder();
+                                            final_pubgid = new StringBuilder();
+                                            temp_final_pubgid = new StringBuilder();
+                                            final_userid = new StringBuilder();
+                                            temp_final_seatnumbr = new StringBuilder();
+
+                                            //////////////////////////////////////////
+                                            for (int i = 0; i < adapter.final_seatselected.size(); i++) {
+                                                final_seatnumbr.append(adapter.final_seatselected.get(i));
+                                                final_seatnumbr.append(",");
+                                            }
+                                            temp_final_seatnumbr = final_seatnumbr.deleteCharAt(final_seatnumbr.length() - 1);
+                                            ///////////////////////////////
+                                            for (int i = 0; i < final_pubgidList.size(); i++) {
+                                                final_pubgid.append(final_pubgidList.get(i));
+                                                final_pubgid.append(",");
+                                            }
+                                            temp_final_pubgid = final_pubgid.deleteCharAt(final_pubgid.length() - 1);
+                                            //////////////////////////////////////
+                                            for (int i = 0; i < final_useridList.size(); i++) {
+                                                final_userid.append(final_useridList.get(i));
+                                                final_userid.append(",");
+                                            }
+                                            temp_final_userid = final_userid.deleteCharAt(final_userid.length() - 1);
+
+                                            Log.d("seatselected_string", String.valueOf(temp_final_seatnumbr));
+                                            Log.d("seatselected_string", String.valueOf(temp_final_pubgid));
+                                            Log.d("seatselected_string", String.valueOf(temp_final_userid));
+
+                                            saveseat(String.valueOf(temp_final_seatnumbr), String.valueOf(temp_final_pubgid), String.valueOf(temp_final_userid), alertDialog);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    });
+                    alertDialog.show();
+                } else {
+                    Toast.makeText(getActivity(), "Please Select atleast one seat!", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+        return view;
+    }
+
+    private void initview(View view) {
+        gridView = view.findViewById(R.id.gridView1);
+        txt_seat_number = view.findViewById(R.id.txt_seat_number);
+        btn_save = view.findViewById(R.id.btn_save);
+    }
+
+    private void saveseat(final String seat, final String pubgid, final String userid, final AlertDialog alertDialog) {
+        if (AppGlobal.isNetwork(Objects.requireNonNull(getActivity()))) {
+            AppGlobal.showProgressDialog(getActivity());
+            Map<String, String> optioMap = new HashMap<>();
+            optioMap.put("RegisterID", sharedPreference.getValue(getActivity(), WsConstant.register_id));
+            optioMap.put("GameID", game_id);
+            optioMap.put("ValidData", "AjsEFhsjcnshsuj@kjmjkmrtghy8rr");
+            optioMap.put("Type", "1");
+            optioMap.put("seat", seat);
+            optioMap.put("username", userid);
+            optioMap.put("gamename", pubgid);
+
+            new RestClient(getActivity()).getInstance().get().seatbooking(optioMap).enqueue(new Callback<CommanResponse>() {
+                @Override
+                public void onResponse(Call<CommanResponse> call, Response<CommanResponse> response) {
+                    AppGlobal.hideProgressDialog(getActivity());
+                    if (response.body() != null) {
+                        if (response.body().getStatus() == 1) {
+                            alertDialog.dismiss();
+                            Toast.makeText(getActivity(), response.body().getMsg(), Toast.LENGTH_SHORT).show();
+                            Intent it = new Intent(getContext(), MainActivity.class);
+                            startActivity(it);
+                            MainActivity.nav.setVisibility(View.VISIBLE);
+                        } else {
+                            Toast.makeText(getActivity(), response.body().getMsg(), Toast.LENGTH_SHORT).show();
+                        }
+                    } else {
+                        Toast.makeText(getActivity(), getString(R.string.network_time_out_error), Toast.LENGTH_SHORT).show();
+                    }
+                }
+
+                @Override
+                public void onFailure(Call<CommanResponse> call, Throwable t) {
+                    try {
+                        AppGlobal.hideProgressDialog(getActivity());
+                        Toast.makeText(getActivity(), getString(R.string.network_error), Toast.LENGTH_SHORT).show();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                }
+            });
+        } else {
+            Toast.makeText(getActivity(), getString(R.string.network_error), Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    private void getselectedfield(String gameid) throws IOException {
+        if (AppGlobal.isNetwork(Objects.requireNonNull(getActivity()))) {
+            AppGlobal.showProgressDialog(getActivity());
+            Map<String, String> optioMap = new HashMap<>();
+            optioMap.put("GameID", gameid);
+            optioMap.put("ValidData", sharedPreference.getValue(getActivity(), WsConstant.valid_data));
+            optioMap.put("Type", "1");
+
+            new RestClient(getActivity()).getInstance().get().getjoinlist(optioMap).enqueue(new Callback<CommanResponse1>() {
+                @Override
+                public void onResponse(Call<CommanResponse1> call, final Response<CommanResponse1> response) {
+                    AppGlobal.hideProgressDialog(getActivity());
+                    if (response.body() != null) {
+                        if (response.body().getStatus() == 1) {
+                            listfromserver = response.body().getInfo();
+                            InputStream is = getResources().openRawResource(R.raw.squad);
+                            Writer writer = new StringWriter();
+                            char[] buffer = new char[1024];
+                            try {
+                                Reader reader = new BufferedReader(new InputStreamReader(is, "UTF-8"));
+                                int n;
+                                while ((n = reader.read(buffer)) != -1) {
+                                    writer.write(buffer, 0, n);
+                                }
+                            } catch (UnsupportedEncodingException e) {
+                                e.printStackTrace();
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            } finally {
+                                try {
+                                    is.close();
+                                } catch (IOException e) {
+                                    e.printStackTrace();
+                                }
+                            }
+                            String jsonString = writer.toString();
+                            Gson gson = new Gson();
+                            SquadModel pojo = gson.fromJson(jsonString, new TypeToken<SquadModel>() {
+                            }.getType());
+                            contactList = (ArrayList<SquadModel.Info>) pojo.getInfo();
+                            adapter = new SquadAdapter(contactList, listfromserver, getActivity());
+                            gridView.setAdapter(adapter);
+                        } else if (response.body().getStatus() == 2) {
+                            listfromserver.clear();
+                            InputStream is = getResources().openRawResource(R.raw.squad);
+                            Writer writer = new StringWriter();
+                            char[] buffer = new char[1024];
+                            try {
+                                Reader reader = new BufferedReader(new InputStreamReader(is, "UTF-8"));
+                                int n;
+                                while ((n = reader.read(buffer)) != -1) {
+                                    writer.write(buffer, 0, n);
+                                }
+                            } catch (UnsupportedEncodingException e) {
+                                e.printStackTrace();
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            } finally {
+                                try {
+                                    is.close();
+                                } catch (IOException e) {
+                                    e.printStackTrace();
+                                }
+                            }
+                            String jsonString = writer.toString();
+                            Gson gson = new Gson();
+                            SquadModel pojo = gson.fromJson(jsonString, new TypeToken<SquadModel>() {
+                            }.getType());
+                            contactList = (ArrayList<SquadModel.Info>) pojo.getInfo();
+                            adapter = new SquadAdapter(contactList, listfromserver, getActivity());
+                            gridView.setAdapter(adapter);
+                        } else {
+                            Toast.makeText(getActivity(), response.body().getMsg(), Toast.LENGTH_SHORT).show();
+                        }
+                    } else {
+                        Toast.makeText(getActivity(), getString(R.string.network_time_out_error), Toast.LENGTH_SHORT).show();
+                    }
+                }
+
+                @Override
+                public void onFailure(Call<CommanResponse1> call, Throwable t) {
+                    try {
+                        AppGlobal.hideProgressDialog(getActivity());
+                        Toast.makeText(getActivity(), getString(R.string.network_error), Toast.LENGTH_SHORT).show();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                }
+            });
+        } else {
+            Toast.makeText(getActivity(), getString(R.string.network_error), Toast.LENGTH_SHORT).show();
+        }
+
+    }
+
+
+}

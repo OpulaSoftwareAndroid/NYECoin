@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_gravity="start"
+    android:gravity="start"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    android:layout_height="match_parent"
+    tools:context=".activity.BeforeGetStarted">
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:gravity="start"
+                android:layout_gravity="start"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.rengwuxian.materialedittext.MaterialEditText
+                    android:layout_width="match_parent"
+                    android:editable="false"
+                    android:layout_marginTop="@dimen/_16sdp"
+                    android:id="@+id/edi_ti_username"
+                    android:layout_marginRight="@dimen/_16sdp"
+                    android:layout_marginLeft="@dimen/_16sdp"
+                    android:layout_height="wrap_content"
+                    app:met_floatingLabel="normal"
+                    android:hint="Username"
+                    tools:ignore="Deprecated,HardcodedText" />
+
+                <com.rengwuxian.materialedittext.MaterialEditText
+                    android:layout_width="match_parent"
+                    android:id="@+id/edi_ti_department"
+                    android:editable="false"
+                    android:text="Support Team"
+                    android:layout_marginRight="@dimen/_16sdp"
+                    android:layout_marginLeft="@dimen/_16sdp"
+                    android:layout_height="wrap_content"
+                    app:met_floatingLabel="normal"
+                    android:hint="Department"
+                    tools:ignore="Deprecated,HardcodedText" />
+
+                <com.rengwuxian.materialedittext.MaterialEditText
+                    android:layout_width="match_parent"
+                    android:id="@+id/edi_ti_subject"
+                    android:layout_marginRight="@dimen/_16sdp"
+                    android:layout_marginLeft="@dimen/_16sdp"
+                    android:layout_height="wrap_content"
+                    app:met_floatingLabel="normal"
+                    android:hint="Subject"
+                    tools:ignore="HardcodedText" />
+
+                <com.rengwuxian.materialedittext.MaterialEditText
+                    android:layout_width="match_parent"
+                    android:layout_marginRight="@dimen/_16sdp"
+                    android:layout_marginLeft="@dimen/_16sdp"
+                    android:id="@+id/edi_ti_message"
+                    android:layout_height="wrap_content"
+                    app:met_floatingLabel="normal"
+                    android:hint="Message"
+                    tools:ignore="HardcodedText" />
+
+                <RelativeLayout
+                    android:layout_gravity="center"
+                    android:id="@+id/rel_image"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:id="@+id/img_ti_image"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/dott"
+                        android:layout_width="@dimen/_120sdp"
+                        android:layout_height="wrap_content"/>
+                    <TextView
+                        android:id="@+id/ti_text"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        android:layout_centerInParent="true"
+                        android:textSize="@dimen/_14sdp"
+                        android:fontFamily="@font/m"
+                        android:text="Upload File"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                </RelativeLayout>
+
+                <Button
+                    android:clickable="false"
+                    android:id="@+id/btn_edit_ti_save"
+                    android:fontFamily="@font/m"
+                    android:layout_margin="@dimen/_16sdp"
+                    android:layout_gravity="center"
+                    android:paddingLeft="@dimen/_16sdp"
+                    android:paddingRight="@dimen/_16sdp"
+                    android:textColor="@color/white"
+                    android:textAllCaps="true"
+                    android:text="save"
+                    android:background="@drawable/btnshape_plain_without_stroke"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

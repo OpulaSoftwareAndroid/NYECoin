@@ -1,0 +1,31 @@
+kyc menu
+
+"resident_status": "0", 
+if (0 and 2)
+save button enable
+else
+remove button save  
+
+
+
+
+
+game list 
+if(is_booking ==1)
+{
+game display set button view detail  
+popup on click roomid and room password
+}else
+{
+	disable button remove 
+}
+game book 
+save button hide issue of resolution 
+
+signup remove sponsor with referal
+
+edit profile 
+remove user id and scroll set 
+orange color 
+
+

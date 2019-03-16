@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@drawable/main_gradiant"
+    android:layout_height="match_parent"
+    tools:context=".activity.BeforeGetStarted">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:textSize="@dimen/_16sdp"
+                    android:gravity="center"
+                    android:fontFamily="@font/m"
+                    android:textColor="@color/colorPrimary"
+                    android:text="@string/app_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:textSize="@dimen/_16sdp"
+                    android:gravity="center"
+                    android:fontFamily="@font/m"
+                    android:textColor="@color/white"
+                    android:text=" is currency"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+            <TextView
+                android:layout_marginTop="@dimen/_16sdp"
+                android:textSize="@dimen/_14sdp"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:fontFamily="@font/m"
+                android:textColor="@color/colorText"
+                android:text="You can trade it for other currencies"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <TextView
+
+                android:textSize="@dimen/_14sdp"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:fontFamily="@font/m"
+                android:textColor="@color/colorText"
+                android:text="like US Dollars, Euros and Pounds"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <RelativeLayout
+                android:layout_marginTop="@dimen/_16sdp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/_100sdp"
+                    android:adjustViewBounds="true"
+                    android:id="@+id/halfcircle"
+                    android:src="@drawable/halfcircle"
+                    android:layout_width="@dimen/_180sdp"
+                    android:layout_height="wrap_content" />
+                <View
+                    android:layout_alignBottom="@+id/halfcircle"
+                    android:background="@color/colorLine"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"/>
+
+                <ImageView
+                    android:layout_width="@dimen/_90sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/halfcircle"
+                    android:layout_centerHorizontal="true"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/mobile2" />
+            </RelativeLayout>
+
+            <TextView
+                android:layout_marginTop="@dimen/_16sdp"
+                android:textSize="@dimen/_14sdp"
+                android:gravity="center"
+                android:fontFamily="@font/m"
+                android:textColor="@color/white"
+                android:text="The exchange rate changes with"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:textSize="@dimen/_14sdp"
+                android:gravity="center"
+                android:fontFamily="@font/m"
+                android:textColor="@color/white"
+                android:text="the market"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_weight="0"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:onClick="onMakesense"
+                android:id="@+id/btn_getstarted"
+                android:fontFamily="@font/m"
+                android:layout_marginBottom="@dimen/_32sdp"
+                android:layout_gravity="center"
+                android:paddingLeft="@dimen/_16sdp"
+                android:paddingRight="@dimen/_16sdp"
+                android:textColor="@color/white"
+                android:textAllCaps="true"
+                android:text="make sense"
+                android:background="@drawable/btnshape_plain_without_stroke"
+                android:layout_width="@dimen/_190sdp"
+                android:layout_height="@dimen/_42sdp"
+                tools:ignore="OnClick" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

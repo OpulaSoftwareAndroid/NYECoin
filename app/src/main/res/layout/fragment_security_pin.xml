@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_gravity="start"
+    android:gravity="start"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    android:layout_height="match_parent"
+    tools:context=".activity.BeforeGetStarted">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:id="@+id/edi_current_pin"
+                android:layout_marginRight="@dimen/_16sdp"
+                android:layout_marginLeft="@dimen/_16sdp"
+                android:layout_height="wrap_content"
+                app:met_floatingLabel="normal"
+                android:maxLength="4"
+                android:hint="Current Pin"
+                android:inputType="numberPassword"
+                tools:ignore="HardcodedText" />
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:layout_width="match_parent"
+                android:id="@+id/edi_new_pin"
+                android:layout_marginRight="@dimen/_16sdp"
+                android:layout_marginLeft="@dimen/_16sdp"
+                android:layout_height="wrap_content"
+                app:met_floatingLabel="normal"
+                android:inputType="numberPassword"
+                android:maxLength="4"
+                android:hint="New Pin"
+                tools:ignore="HardcodedText" />
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:layout_width="match_parent"
+                android:id="@+id/edi_confirm_pin"
+                android:inputType="numberPassword"
+                android:layout_marginRight="@dimen/_16sdp"
+                android:layout_marginLeft="@dimen/_16sdp"
+                android:layout_height="wrap_content"
+                app:met_floatingLabel="normal"
+                android:hint="Confirm Pin"
+                android:maxLength="4"
+                tools:ignore="HardcodedText" />
+
+            <Button
+                android:layout_marginTop="@dimen/_16sdp"
+                android:id="@+id/btn_edit_pin_save"
+                android:fontFamily="@font/m"
+                android:layout_margin="@dimen/_16sdp"
+                android:layout_gravity="center"
+                android:paddingLeft="@dimen/_16sdp"
+                android:paddingRight="@dimen/_16sdp"
+                android:textColor="@color/white"
+                android:textAllCaps="true"
+                android:text="save"
+                android:background="@drawable/btnshape_plain_without_stroke"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".fragment.Transaction_history">
+
+    <TextView
+        android:visibility="gone"
+        android:gravity="center"
+        android:layout_weight="1"
+        android:fontFamily="@font/m"
+        android:textStyle="bold"
+        android:textSize="@dimen/_16sdp"
+        android:id="@+id/txt_norecord"
+        android:text="No Ticket Found"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/swipeToRefresh_ticket"
+        android:visibility="visible"
+        android:layout_width="match_parent"
+        android:layout_marginTop="@dimen/_4sdp"
+        android:layout_marginBottom="@dimen/_4sdp"
+        android:layout_weight="1"
+        android:layout_height="match_parent">
+        <ListView
+            android:listSelector="@android:color/transparent"
+            android:visibility="visible"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:layout_marginBottom="@dimen/_4sdp"
+            android:scrollbars="none"
+            android:id="@+id/list_ticket"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </android.support.v4.widget.SwipeRefreshLayout>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/floatingActionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="@dimen/_16sdp"
+        android:layout_marginEnd="@dimen/_16sdp"
+        android:clickable="true"
+        app:backgroundTint="@color/colorPrimary"
+        android:src="@drawable/ic_add_black_24dp"
+        app:elevation="5dp"
+        android:focusable="true"
+        tools:ignore="OnClick" />
+
+</RelativeLayout>

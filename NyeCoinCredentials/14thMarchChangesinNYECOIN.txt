@@ -1,0 +1,7 @@
+Country code 3 digit + optional
+country code validation not done
+Toast issue in validation 
+Strong password validation as per website
+Ripple image not displayed
+call user details by id after kyc succesfull (status 1 approve and status 2 reupload) 
+

@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scrollLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:fillViewport="true"
+    >
+
+<RelativeLayout android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+
+        android:visibility="gone"
+        android:background="@color/colorPrimary"
+        android:layout_weight="0"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:id="@+id/lin_mai1n1"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+            <TextView
+                android:textSize="@dimen/_14sdp"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/lin_txt11"
+                android:text="Personal"
+                android:textColor="@color/white" />
+            <View
+                android:visibility="invisible"
+                android:id="@+id/view_lin1"
+                android:background="@color/colorAccent"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lin_main21"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+            <TextView
+                android:textSize="@dimen/_14sdp"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/lin_txt21"
+                android:text="Contact"
+                android:textColor="@color/white" />
+            <View
+                android:visibility="invisible"
+                android:id="@+id/view_lin2"
+                android:background="@color/colorAccent"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lin_main3"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+            <TextView
+                android:textSize="@dimen/_14sdp"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/lin_txt3"
+                android:text="API Keys"
+                android:textColor="@color/white" />
+            <View
+                android:visibility="invisible"
+                android:id="@+id/view_lin3"
+                android:background="@color/colorAccent"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"/>
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <FrameLayout
+            android:id="@+id/content_frame_setting"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        </ScrollView>
+
+    </LinearLayout>
+</LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="center"
+        android:padding="5dp"
+        android:background="@drawable/rectangle_arc_2"
+        android:gravity="center"
+        android:layout_height="wrap_content">
+
+
+        <LinearLayout
+            android:id="@+id/lin_main1"
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="@dimen/_32sdp"
+            android:layout_gravity="center"
+            android:background="@drawable/btnshape_plain_with_stroke"
+            android:clickable="true"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <!--<ImageView-->
+            <!--android:layout_width="@dimen/_18sdp"-->
+            <!--android:layout_height="@dimen/_18sdp"-->
+            <!--android:src="@drawable/db_up" />-->
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/m"
+                android:id="@+id/lin_txt1"
+                android:text="Personal"
+                android:textColor="@color/colorRed"
+                android:textSize="@dimen/_14sdp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="@dimen/_32sdp"
+            android:layout_gravity="center"
+            android:id="@+id/lin_main2"
+            android:background="@drawable/btnshape_plain_with_stroke"
+            android:clickable="true"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <!--<ImageView-->
+            <!--android:layout_width="@dimen/_18sdp"-->
+            <!--android:layout_height="@dimen/_18sdp"-->
+            <!--android:src="@drawable/db_down" />-->
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/m"
+                android:id="@+id/lin_txt2"
+                android:text="Contact"
+                android:textColor="@color/colorGrey"
+                android:textSize="@dimen/_14sdp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>
+</ScrollView>

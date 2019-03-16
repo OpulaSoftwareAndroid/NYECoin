@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:layout_gravity="center"
+    android:background="@color/colorPrimary"
+    android:orientation="vertical"
+    android:layout_marginBottom="@dimen/_16sdp"
+    android:layout_marginTop="@dimen/_16sdp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:background="@drawable/transaction_details_with_stroke"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:id="@+id/re"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:fontFamily="@font/m"
+                android:id="@+id/txt_de_date"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/_14sdp"
+                android:text="2018-09-07"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:layout_centerHorizontal="true"
+                android:gravity="center"
+                android:id="@+id/txt_de_time"
+                android:layout_below="@id/txt_de_date"
+                android:fontFamily="@font/m"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/_14sdp"
+                android:text="20:40:45"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <ImageView
+                android:id="@+id/close"
+                android:adjustViewBounds="true"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/transaction_close"
+                android:layout_width="@dimen/_36sdp"
+                android:layout_height="@dimen/_36sdp" />
+        </RelativeLayout>
+
+        <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:layout_marginTop="@dimen/_8sdp"
+                android:gravity="center"
+                android:layout_gravity="start"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:textStyle="bold"
+                    android:paddingBottom="@dimen/_5sdp"
+                    android:paddingTop="@dimen/_5sdp"
+                    android:paddingRight="@dimen/_10sdp"
+                    android:paddingLeft="@dimen/_10sdp"
+                    android:background="@drawable/btn_shape_round_without_effect"
+                    android:id="@+id/txt_de_status"
+                    android:layout_marginBottom="@dimen/_8sdp"
+                    android:fontFamily="@font/m"
+                    android:textSize="@dimen/_14sdp"
+                    android:text="Status : Completed"
+                    android:textColor="@color/white"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/txt_de_token"
+                    android:background="@drawable/transaction_api_details_with_stroke"
+                    android:padding="@dimen/_5sdp"
+                    android:textSize="@dimen/_14sdp"
+                    android:fontFamily="@font/m"
+                    android:visibility="gone"
+                    android:textColor="@color/colortransactionBlue"
+                    android:text="API Generated Transaction"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/txt_de_orignal_amount"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:visibility="gone"
+                    android:fontFamily="@font/m"
+                    android:textSize="@dimen/_12sdp"
+                    android:text="Orignal Amount : 0.00000111"
+                    android:textColor="@color/black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/txt_de_fees"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:fontFamily="@font/m"
+                    android:textSize="@dimen/_14sdp"
+                    android:text="Fees : 0.09%"
+                    android:textColor="@color/black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/txt_de_se"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:fontFamily="@font/m"
+                    android:textSize="@dimen/_14sdp"
+                    android:text="Sender : demo"
+                    android:visibility="gone"
+                    android:textColor="@color/black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/txt_de_se_email"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:fontFamily="@font/m"
+                    android:textSize="@dimen/_14sdp"
+                    android:text="Sender Email"
+                    android:visibility="gone"
+                    android:textColor="@color/black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/txt_de_se_email_address"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    android:fontFamily="@font/m"
+                    android:textSize="@dimen/_14sdp"
+                    android:text="demo@gmail.com"
+                    android:visibility="gone"
+                    android:layout_width="@dimen/_200sdp"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/txt_de_tx"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:fontFamily="@font/m"
+                    android:textSize="@dimen/_14sdp"
+                    android:text="Transaction Id"
+                    android:visibility="gone"
+                    android:textColor="@color/black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/txt_de_txid"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    android:fontFamily="@font/m"
+                    android:textSize="@dimen/_14sdp"
+                    android:text="Toxzvzxvxvzxvzvzxvzxvxzvxzxvxxvzxvxzvzxvzxvvxvx"
+                    android:layout_width="@dimen/_200sdp"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/txt_de_alg_amount"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:fontFamily="@font/m"
+                    android:textSize="@dimen/_14sdp"
+                    android:text="Amount : 0.000001 NYE"
+                    android:textColor="@color/black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/txt_de_send_receive"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:fontFamily="@font/m"
+                    android:textSize="@dimen/_14sdp"
+                    android:text="Address To"
+                    android:textColor="@color/black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/txt_de_send_receive_id"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    android:fontFamily="@font/m"
+                    android:textSize="@dimen/_14sdp"
+                    android:text=""
+                    android:layout_width="@dimen/_200sdp"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/txt_de_transaction_hash"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:fontFamily="@font/m"
+                    android:textSize="@dimen/_14sdp"
+                    android:text="Transaction hash"
+                    android:textColor="@color/black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/txt_de_transaction_hash_id"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    android:fontFamily="@font/m"
+                    android:linksClickable="true"
+                    android:textColorLink="@color/colorPrimary"
+                    android:textSize="@dimen/_14sdp"
+                    android:clickable="true"
+                    android:text="Toxzvzxvxvzxvzvzxvzxvxzvxzxvxxvzxvxzvzxvzxvvxvx"
+                    android:layout_width="@dimen/_200sdp"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/txt_de_time_completed"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:fontFamily="@font/m"
+                    android:textSize="@dimen/_14sdp"
+                    android:text="Time Completed"
+                    android:textColor="@color/black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/txt_de_time_completed_time"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    android:fontFamily="@font/m"
+                    android:textSize="@dimen/_14sdp"
+                    android:layout_marginBottom="@dimen/_8sdp"
+                    android:text="5484884848481"
+                    android:layout_width="@dimen/_200sdp"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+        </ScrollView>
+
+    </LinearLayout>
+</LinearLayout>

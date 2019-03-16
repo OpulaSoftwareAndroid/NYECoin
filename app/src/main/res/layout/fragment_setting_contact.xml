@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_gravity="start"
+    android:gravity="start"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    android:layout_height="match_parent"
+    tools:context=".activity.BeforeGetStarted">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/edi_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_16sdp"
+                android:layout_marginRight="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:hint="Address"
+                app:met_floatingLabel="normal"
+                tools:ignore="HardcodedText" />
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/editTextCity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_16sdp"
+                android:layout_marginRight="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:hint="City"
+                app:met_floatingLabel="normal"
+                tools:ignore="HardcodedText" />
+
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/editTextState"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_16sdp"
+                android:layout_marginRight="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:hint="State"
+                app:met_floatingLabel="normal"
+                tools:ignore="HardcodedText" />
+
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/edi_country"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_16sdp"
+                android:layout_marginRight="@dimen/_16sdp"
+                android:editable="false"
+                android:hint="Country"
+                app:met_floatingLabel="normal"
+                tools:ignore="Deprecated,HardcodedText" />
+
+            <Spinner
+                android:visibility="gone"
+                android:id="@+id/spinner_state"
+                style="@style/Base.Widget.AppCompat.Spinner.Underlined"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_4sdp"
+                android:layout_marginLeft="@dimen/_14sdp"
+                android:layout_marginRight="@dimen/_14sdp"
+                android:backgroundTint="@color/colorText"
+                android:prompt="@string/next"
+                tools:ignore="HardcodedText"
+                tools:targetApi="lollipop" />
+
+            <Spinner
+                android:id="@+id/spinner_city"
+                android:visibility="gone"
+                style="@style/Base.Widget.AppCompat.Spinner.Underlined"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_8sdp"
+                android:layout_marginLeft="@dimen/_14sdp"
+                android:layout_marginRight="@dimen/_14sdp"
+                android:backgroundTint="@color/colorText"
+                android:prompt="@string/next"
+                tools:ignore="HardcodedText"
+                tools:targetApi="lollipop" />
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/edi_pincode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_16sdp"
+                android:layout_marginRight="@dimen/_16sdp"
+                android:hint="Pincode"
+                android:inputType="number"
+                app:met_floatingLabel="normal"
+                tools:ignore="HardcodedText" />
+
+            <Button
+                android:id="@+id/btn_edit_contact_save"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:background="@drawable/btnshape_plain_without_stroke"
+                android:fontFamily="@font/m"
+                android:paddingLeft="@dimen/_16sdp"
+                android:paddingRight="@dimen/_16sdp"
+                android:text="save"
+                android:textAllCaps="true"
+                android:textColor="@color/white" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

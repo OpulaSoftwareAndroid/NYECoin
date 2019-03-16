@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?><!DOCTYPE resources [<!ENTITY appname "NYECoin"><!ENTITY appcode "NYE">]>
+<resources>
+    <string name="app_name">&appname;</string>
+    <string name="coin_code">&appcode;</string>
+    <string name="next">NEXT</string>
+    <string name="skip">SKIP</string>
+    <string name="start">GOT IT</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="network_time_out_error">Something went wrong, Please try again later!!!</string>
+    <string name="network_error">No internet connection. Make sure Wi-Fi or cellular data is turned on, then try again.</string>
+    <string name="resendmail">Your account created successfully in &appname;. Please verify your account using verification link which send in your email. Please check your inbox or spam.</string>
+    <string name="appname_address">&appcode; Address</string>
+    <string name="send_appanme">send &appname;</string>
+    <string name="receive_heading">Receive &appcode;</string>
+    <string name="receive_sub_heading_1">My Public Address to Receive</string>
+    <string name="app_code">&appcode;</string>
+
+
+    <string name="not_even_appname_pay_can_access_it">Not even &appname; Pay can access it</string>
+    <string name="this_app_store_your_appname_cutting">This app store your &appname; cutting</string>
+
+</resources>

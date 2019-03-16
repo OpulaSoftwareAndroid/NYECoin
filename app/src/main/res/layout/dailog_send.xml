@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@color/white"
+                android:fontFamily="@font/m"
+                android:gravity="center"
+                android:padding="@dimen/_8sdp"
+                android:text="Send NYE"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_16sdp" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:weightSum="1"
+        android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@color/white"
+                android:fontFamily="@font/m"
+                android:gravity="center"
+                android:padding="@dimen/_8sdp"
+                android:text="Your NYE wallet balance:"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_11sdp" />
+
+            <TextView
+                android:id="@+id/textViewNyeWalletBalance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@color/white"
+                android:fontFamily="@font/m"
+                android:padding="@dimen/_8sdp"
+                android:text="7894564.00 NYE"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/_11sdp" />
+    </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.rengwuxian.materialedittext.MaterialEditText
+                    android:id="@+id/et_paxex_address"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_8sdp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:layout_marginRight="@dimen/_8sdp"
+                    android:layout_weight="1"
+                    android:hint="@string/appname_address"
+                    android:singleLine="true"
+                    app:met_floatingLabel="normal"
+                    tools:ignore="HardcodedText" />
+
+                <ImageView
+                    android:id="@+id/btn_paste"
+                    android:layout_width="@dimen/_34sdp"
+                    android:layout_height="@dimen/_34sdp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:layout_marginRight="@dimen/_8sdp"
+                    android:layout_marginBottom="@dimen/_8sdp"
+                    android:background="@drawable/btnshape_plain_without_stroke"
+                    android:paddingLeft="@dimen/_8sdp"
+                    android:paddingRight="@dimen/_8sdp"
+                    android:src="@drawable/ic_content_paste_black_24dp" />
+
+                <LinearLayout
+                    android:id="@+id/linear_Send_Paxex_QrCode"
+                    android:layout_width="@dimen/_34sdp"
+                    android:layout_height="@dimen/_34sdp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginRight="@dimen/_8sdp"
+                    android:background="@drawable/btnshape_plain_without_stroke"
+                    android:clickable="true"
+                    android:gravity="center"
+                    android:padding="@dimen/_5sdp">
+
+                    <ImageView
+                        android:layout_width="@dimen/_22sdp"
+                        android:layout_height="@dimen/_22sdp"
+                        android:padding="@dimen/_3sdp"
+                        android:src="@drawable/icon_qr_code" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/et_paxex_amount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_8sdp"
+                android:hint="NYE Amount"
+                android:inputType="numberDecimal"
+                android:singleLine="true"
+                app:met_floatingLabel="normal"
+                tools:ignore="HardcodedText" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:layout_marginRight="@dimen/_8sdp"
+                android:layout_marginBottom="@dimen/_8sdp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_txt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:padding="@dimen/_5sdp"
+                    android:text="Fees : 0.00%"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_13sdp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_Send_TRC_Fees"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:background="@drawable/ed_disable"
+                        android:enabled="false"
+                        android:hint="Fees : 0.00"
+                        android:padding="@dimen/_7sdp"
+                        android:singleLine="true"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_13sdp" />
+
+                    <TextView
+                        android:id="@+id/tv_Send_TRC_TotalAmount"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:background="@drawable/ed_disable"
+                        android:enabled="false"
+                        android:hint="Total Amount : 0.00"
+                        android:padding="@dimen/_7sdp"
+                        android:singleLine="true"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_13sdp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/et_login_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:layout_marginRight="@dimen/_8sdp"
+                android:hint="Transaction Password"
+                android:inputType="textPassword"
+                android:singleLine="true"
+                app:met_floatingLabel="normal"
+                tools:ignore="HardcodedText" />
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/editTextRemarks"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:layout_marginRight="@dimen/_8sdp"
+                android:hint="Remarks (Optional)"
+                android:inputType="text"
+                android:singleLine="true"
+                app:met_floatingLabel="normal"
+                tools:ignore="HardcodedText" />
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/editTextOTP"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:layout_marginRight="@dimen/_8sdp"
+                android:hint="Enter Received OTP "
+                android:inputType="textPassword"
+                android:singleLine="true"
+                app:met_floatingLabel="normal"
+                tools:ignore="HardcodedText" />
+
+            <Button
+                android:id="@+id/btn_paxex_send"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginBottom="@dimen/_8sdp"
+                android:background="@drawable/btnshape_plain_without_stroke"
+                android:fontFamily="@font/m"
+                android:paddingLeft="@dimen/_16sdp"
+                android:paddingRight="@dimen/_16sdp"
+                android:text="Send"
+                android:textAllCaps="true"
+                android:textColor="@color/white" />
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

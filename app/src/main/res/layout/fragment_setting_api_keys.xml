@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_gravity="start"
+    android:gravity="start"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    android:layout_height="match_parent"
+    tools:context=".activity.BeforeGetStarted">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:id="@+id/edit_marchant"
+                android:layout_marginRight="@dimen/_16sdp"
+                android:editable="false"
+                android:layout_marginLeft="@dimen/_16sdp"
+                android:layout_height="wrap_content"
+                app:met_floatingLabel="normal"
+                android:hint="Marchant Key"
+                tools:ignore="Deprecated,HardcodedText" />
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:layout_width="match_parent"
+                android:layout_marginRight="@dimen/_16sdp"
+                android:layout_marginLeft="@dimen/_16sdp"
+                android:editable="false"
+                android:id="@+id/edit_public"
+                android:layout_height="wrap_content"
+                app:met_floatingLabel="normal"
+                android:hint="Public Key"
+                tools:ignore="Deprecated,HardcodedText" />
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:layout_width="match_parent"
+                android:layout_marginRight="@dimen/_16sdp"
+                android:layout_marginLeft="@dimen/_16sdp"
+                android:id="@+id/edit_private"
+                android:editable="false"
+                android:layout_height="wrap_content"
+                app:met_floatingLabel="normal"
+                android:hint="Private Key"
+                tools:ignore="Deprecated,HardcodedText" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

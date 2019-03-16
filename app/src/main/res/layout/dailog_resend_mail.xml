@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:gravity="start"
+    android:layout_gravity="start"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:id="@+id/re"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:paddingLeft="@dimen/_8sdp"
+                    android:gravity="start"
+                    android:id="@+id/et"
+                    android:layout_gravity="start"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:fontFamily="@font/m"
+                    android:textSize="@dimen/_12sdp"
+                    android:text="@string/resendmail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <LinearLayout
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:layout_marginBottom="@dimen/_8sdp"
+                    android:gravity="end"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <Button
+                        android:id="@+id/btn_signinnn"
+                        android:fontFamily="@font/m"
+                        android:textAllCaps="true"
+                        android:layout_marginRight="@dimen/_16sdp"
+                        android:textSize="@dimen/_12sdp"
+                        android:textColor="@color/white"
+                        android:background="@drawable/btnshape_plain_without_stroke"
+                        android:text="Sign in"
+                        android:layout_width="@dimen/_100sdp"
+                        android:layout_height="@dimen/_32sdp"/>
+                    <Button
+                        android:id="@+id/btn_resendmail"
+                        android:fontFamily="@font/m"
+                        android:textAllCaps="true"
+                        android:layout_marginRight="@dimen/_8sdp"
+                        android:textSize="@dimen/_12sdp"
+                        android:textColor="@color/white"
+                        android:background="@drawable/btnshape_plain_without_stroke"
+                        android:text="Resend mail"
+                        android:layout_width="@dimen/_100sdp"
+                        android:layout_height="@dimen/_32sdp"/>
+                </LinearLayout>
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>

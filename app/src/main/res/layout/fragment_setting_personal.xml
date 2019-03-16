@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:background="@color/white"
+        android:layout_height="match_parent"
+        tools:context=".activity.BeforeGetStarted">
+
+
+    <LinearLayout
+        android:layout_marginTop="@dimen/_8sdp"
+        android:orientation="vertical"
+        android:weightSum="2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:layout_weight="1.8"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:layout_width="@dimen/_90sdp"
+
+                android:layout_height="@dimen/_90sdp">
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/image_PersonalInfo_DP"
+                    android:layout_width="@dimen/_90sdp"
+                    android:layout_height="@dimen/_90sdp"
+                    android:background="@android:color/transparent"
+                    android:src="@drawable/image_boy"/>
+                <ImageView
+                    android:id="@+id/edit_edit_profile"
+                    android:layout_width="@dimen/_24sdp"
+                    android:layout_height="@dimen/_24sdp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentEnd="true"
+                    android:src="@drawable/profile_camara" />
+            </RelativeLayout>
+
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:layout_width="match_parent"
+                android:id="@+id/edit_registerid"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:layout_marginRight="@dimen/_16sdp"
+                android:layout_marginLeft="@dimen/_16sdp"
+                android:layout_height="wrap_content"
+                app:met_floatingLabel="normal"
+                android:editable="false"
+                android:hint="Registered ID"
+                tools:ignore="Deprecated,HardcodedText" />
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:layout_width="match_parent"
+                android:id="@+id/edit_fullname"
+                android:layout_marginRight="@dimen/_16sdp"
+                android:layout_marginLeft="@dimen/_16sdp"
+                android:layout_height="wrap_content"
+                android:editable="false"
+                app:met_floatingLabel="normal"
+                android:hint="Full Name"
+                tools:ignore="HardcodedText" />
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:layout_width="match_parent"
+                android:layout_marginRight="@dimen/_16sdp"
+                android:editable="false"
+                android:id="@+id/edit_username"
+                android:layout_marginLeft="@dimen/_16sdp"
+                android:layout_height="wrap_content"
+                app:met_floatingLabel="normal"
+                android:hint="Username"
+                tools:ignore="Deprecated,HardcodedText" />
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:layout_width="match_parent"
+                android:layout_marginRight="@dimen/_16sdp"
+                android:editable="false"
+                android:layout_marginLeft="@dimen/_16sdp"
+                android:layout_height="wrap_content"
+                app:met_floatingLabel="normal"
+                android:id="@+id/edit_email"
+                android:hint="Email"
+                tools:ignore="Deprecated,HardcodedText" />
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.rengwuxian.materialedittext.MaterialEditText
+                    android:layout_width="@dimen/_50sdp"
+                    android:layout_weight="0"
+                    android:maxLength="4"
+                    android:layout_marginLeft="@dimen/_16sdp"
+                    android:layout_height="wrap_content"
+                    app:met_floatingLabel="normal"
+                    android:visibility="visible"
+                    android:id="@+id/edit_code"
+                    android:inputType="phone"
+                    android:hint="Code"
+                    tools:ignore="HardcodedText" />
+                <com.hbb20.CountryCodePicker
+                    android:id="@+id/pickerCountryCode"
+                    android:visibility="gone"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent" />
+
+                <Spinner
+                    android:id="@+id/spinnerCountryCode"
+                    style="@style/Base.Widget.AppCompat.Spinner.Underlined"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:visibility="gone"
+                    android:layout_weight="0"
+                    android:backgroundTint="@color/colorText"
+                    android:prompt="@string/next"
+                    tools:ignore="HardcodedText"
+                    tools:targetApi="lollipop" />
+
+                <com.rengwuxian.materialedittext.MaterialEditText
+                    android:layout_width="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    app:met_floatingLabel="normal"
+                    android:maxLength="10"
+                    android:inputType="phone"
+                    android:hint="Mobile No."
+                    android:id="@+id/edit_mobile"
+                    tools:ignore="HardcodedText" />
+
+            </LinearLayout>
+            <Button
+                android:layout_marginTop="@dimen/_16sdp"
+                android:id="@+id/btn_edit_save"
+                android:fontFamily="@font/m"
+                android:layout_margin="@dimen/_16sdp"
+                android:paddingLeft="@dimen/_16sdp"
+                android:paddingRight="@dimen/_16sdp"
+                android:layout_marginBottom="@dimen/_20sdp"
+                android:textColor="@color/white"
+                android:textAllCaps="true"
+                android:text="save"
+                android:background="@drawable/btnshape_primary_without_stroke"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

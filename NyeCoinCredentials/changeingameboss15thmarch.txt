@@ -1,0 +1,24 @@
+alpha numeric and number done**
+1. edit profile done**
+
+2. pubg id rename to pubg name
+user id removed   done**
+
+3. In login page of social and normal
+{at status = 2 pop up of pubgid } done**
+
+4. Game seat booking done** 
+	REMOVE USER ID done**
+	PUBID TO PUBGNAME done**
+
+5. Game list 
+
+	(note: id password will be generated 15 mint before game start )
+
+	 room id and password display in dialog booking is 1  done**
+
+6. booking seat save button not coming in small mobile done**
+
+7. edit profile keep scrolview of theme color done**
+
+ 		

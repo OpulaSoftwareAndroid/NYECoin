@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@android:color/transparent"
+    android:layout_height="match_parent"
+    tools:context=".activity.BeforeGetStarted">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_150sdp">
+
+        <LinearLayout
+            android:layout_marginTop="@dimen/_16sdp"
+            android:gravity="start"
+            android:layout_gravity="center"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:textStyle="bold"
+                android:textSize="@dimen/_20sdp"
+                android:fontFamily="@font/m"
+                android:textColor="@color/color_Text_dashboard"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:text="LIC"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:layout_marginTop="@dimen/_4sdp"
+                android:textStyle="bold"
+                android:textSize="@dimen/_25sdp"
+                android:fontFamily="@font/m"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:text="12,124"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_marginTop="@dimen/_4sdp"
+                android:textSize="@dimen/_14sdp"
+                android:fontFamily="@font/m"
+                android:textColor="@color/color_Text_dashboard"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:text="+LIC 0,15 3%"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
